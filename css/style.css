@@ -61,8 +61,7 @@ input {
 /**---------------------------------------------*/
 /**------------header---------------------------*/
 .header{
-border-bottom: 1px solid #E7E9FC;
-box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+
 }
 .header-container{
     display: flex;
@@ -91,40 +90,7 @@ align-items: center;
 .nav-list{
     display: none;
 }
-.menu-nav{
-    color: #2E2F42;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        padding: 24px 0;
-        display: block;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        
-}
 
-.menu-nav:hover,
-.menu-nav:focus,
-.menu-nav:active{
-    color: #404bbf;
-}
-.current{
-    position: relative;
-    color: #404bbf;
-}
-.current::after {
-    display: block;
-    border-radius: 2px;
-    content: "";
-    background-color: #404bbf;
-    width: 100%;
-    height: 4px;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .address{
     font-style: normal;
     margin-left: auto;
@@ -133,18 +99,7 @@ align-items: center;
     display: none;
     
 }
-.contact{
-    color:#434455;
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.contact:hover,
-.contact:focus,
-.contact:active{
-    color: #404bbf;
-}
+
 .header-btn-open-menu{
     padding: 0;
     display: flex;
@@ -172,6 +127,15 @@ align-items: center;
             max-width: 100%;
             max-width: 320px;
             margin: 0 auto;
+}
+@media screen and (min-device-pixel-ratio: 2),
+(min-resolution: 2dppx), 
+(min-resolution: 192dpi) {
+    .hero-section {
+        background:
+            linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)),
+            url(../images/Dark-bg-mob-2x.jpg);
+    }
 }
 
 .hero-container{
@@ -237,8 +201,6 @@ text-transform: capitalize;
         font-weight: 700;
         line-height: 1.1;
         text-transform: capitalize;
-/* font-weight: 500; */
-/* font-size: 20px; */
 letter-spacing: 0.02em;
 line-height: 1.2;
 color: #2e2f42;
@@ -436,13 +398,20 @@ transform: translateY(0%)
 .footer{
     background-color: #2e2f42;
     padding-top: 96px;
+    padding-bottom: 96px;
     /* padding:100px 0; */
 }
 .footer-container {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-
+max-width: 320px;
+display: flex;
+flex-direction: column;
+}
+.footer-container-list{
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 16px;
+margin-bottom: 72px;
 }
 .footer-wrap{
     display: flex;
@@ -451,12 +420,13 @@ transform: translateY(0%)
 
 }
 .footer-text{
+    font-size: 16px;
+    font-weight: 400;
     max-width: 100%;
     width: 264px;
     line-height: 1.5;
     color: #F4F4FD;
     letter-spacing: 0.02em;
-    padding-top: 17.5px;
 }
 .footer-logo{
     color: #F4F4FD;
@@ -468,11 +438,18 @@ transform: translateY(0%)
 .social-media{
 display: flex;
 flex-direction: column;
+align-items: center;
+justify-content: center;
+    text-align: center;
+    margin-top: 72px;
+        margin-bottom: 16px;
 
 }
 .all-footer{
+    display: flex;
+    flex-direction: column;
 align-items: center;
-margin-right: 120px;
+
 }
 
 .footer-icons-list {
@@ -510,7 +487,8 @@ margin-right: 120px;
 .footer-subscribe{
     display: flex;
     flex-direction: column;
-    margin-left: 80px;
+    text-align: center;
+    align-items: center;
 }
 .footer-subscribe-text{
     color: #FFF;
@@ -545,6 +523,7 @@ margin-right: 120px;
 max-width: 264px;
 height: 40px;
 flex-shrink: 0;
+flex-direction: column;
 }
 .footer-button{
     display: flex;
@@ -569,6 +548,7 @@ flex-shrink: 0;
 }
 
 
+
 /**----------------------------------------------*/
 /**------------modal-----------------------------*/
 
@@ -590,11 +570,11 @@ pointer-events: auto;
 }
 .modal{
     position: absolute;
-    width: 408px;
-    min-height: 584px;
+    width: 288px;
+    height: 100vh;
     top: 50%;
     left: 50%;
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px;
     transform: translate(-50%, -50%) scale(1);
     border-radius: 4px;
     background: #FCFCFC;
