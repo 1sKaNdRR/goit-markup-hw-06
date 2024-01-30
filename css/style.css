@@ -112,11 +112,13 @@ align-items: center;
 /**-----------------------------------------------*/
 /**------------modal-menu-------------------------*/
 .menu-modal {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 288px;
-    height: 100vh;
+    height: 100%;
     top: 50%;
     left: 50%;
+    position: fixed;
     opacity: 0;
     visibility: hidden;
     padding: 24px 24px 40px 16px;
@@ -124,6 +126,7 @@ align-items: center;
     background: #FCFCFC;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.20);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
 .icon-close-btn-menu {
     position: absolute;
@@ -200,7 +203,6 @@ align-items: center;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 168px;
     margin-bottom: 48px;
 }
 
@@ -233,7 +235,7 @@ align-items: center;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: auto;
+
 }
 
 .size-menu {
@@ -261,7 +263,14 @@ align-items: center;
 .icon-menu {
     fill: #F4F4FD;
 }
-
+.menu-top{
+    margin-bottom: auto;
+}
+.menu-bottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: 168px;
+}
 /**-----------------------------------------------*/
 /**------------hero-section-----------------------*/
 

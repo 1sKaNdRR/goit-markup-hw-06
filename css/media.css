@@ -231,7 +231,7 @@
 }
 @media screen and (min-width:1158px){
     .our-team{
-        padding: 0;
+        padding: 120px 0;
     }
     .team-container{
         gap: 24px;
